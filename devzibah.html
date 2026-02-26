@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dev_zibah ANALYTICS | Data Analysis Class</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background: linear-gradient(-45deg,#0f0c29,#302b63,#24243e,#1a1a2e);
+background-size: 400% 400%;
+animation: gradientBG 12s ease infinite;
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+padding:20px;
+}
+
+@keyframes gradientBG{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.container{
+background: rgba(255,255,255,0.05);
+backdrop-filter: blur(20px);
+border-radius:20px;
+padding:50px;
+max-width:700px;
+width:100%;
+box-shadow:0 25px 80px rgba(0,0,0,0.5);
+border:1px solid rgba(255,255,255,0.1);
+}
+
+.brand{
+text-align:center;
+font-size:14px;
+letter-spacing:3px;
+color:#00f5ff;
+margin-bottom:15px;
+font-weight:600;
+}
+
+h1{
+font-size:38px;
+font-weight:800;
+text-align:center;
+background:linear-gradient(90deg,#00f5ff,#ff00c8,#00ff88);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+margin-bottom:20px;
+}
+
+.description{
+text-align:center;
+color:#ddd;
+font-size:16px;
+margin-bottom:35px;
+line-height:1.6;
+}
+
+form{
+margin-top:20px;
+}
+
+.input-group{
+margin-bottom:20px;
+}
+
+input{
+width:100%;
+padding:16px;
+border-radius:12px;
+border:none;
+outline:none;
+background:rgba(255,255,255,0.08);
+color:white;
+font-size:15px;
+transition:0.3s;
+}
+
+input:focus{
+background:rgba(255,255,255,0.15);
+box-shadow:0 0 15px #00f5ff;
+}
+
+button{
+width:100%;
+padding:16px;
+border:none;
+border-radius:12px;
+font-size:16px;
+font-weight:600;
+cursor:pointer;
+background:linear-gradient(90deg,#00f5ff,#ff00c8,#00ff88);
+color:black;
+transition:0.3s;
+}
+
+button:hover{
+transform:translateY(-3px);
+box-shadow:0 15px 35px rgba(0,255,255,0.4);
+}
+
+.features{
+margin-top:35px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+gap:15px;
+text-align:center;
+font-size:13px;
+color:#ccc;
+}
+
+.feature-box{
+background:rgba(255,255,255,0.05);
+padding:12px;
+border-radius:10px;
+}
+
+.footer{
+margin-top:25px;
+text-align:center;
+font-size:12px;
+color:#aaa;
+}
+
+@media(max-width:600px){
+h1{font-size:28px;}
+.container{padding:30px;}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="brand">DEV_ZIBAH ANALYTICS</div>
+
+<h1>Master Data Analysis & Build a Tech Career</h1>
+
+<p class="description">
+Join my intensive Data Analysis Class where you will learn SQL, SPSS, Python,
+real-world analytics, and freelance skills — even if you're starting from scratch.
+</p>
+
+<form id="registrationForm">
+
+<div class="input-group">
+<input type="text" id="name" placeholder="Full Name" required>
+</div>
+
+<div class="input-group">
+<input type="email" id="email" placeholder="Email Address" required>
+</div>
+
+<button type="submit">Proceed to Payment via WhatsApp</button>
+
+</form>
+
+<div class="features">
+<div class="feature-box">SQL</div>
+<div class="feature-box">SPSS</div>
+<div class="feature-box">Python</div>
+<div class="feature-box">Real Projects</div>
+</div>
+
+<div class="footer">
+Limited slots available • Secure your seat today
+</div>
+
+</div>
+
+<script>
+document.getElementById("registrationForm").addEventListener("submit", function(e){
+e.preventDefault();
+
+const name = document.getElementById("name").value.trim();
+const email = document.getElementById("email").value.trim();
+
+if(!name || !email){
+alert("Please fill in all fields.");
+return;
+}
+
+const phoneNumber = "+12523475356"; // Replace with your WhatsApp number
+
+const message = `My name is ${name}.. im interested in your Data analysis class, i have a laptop and i want to proceed to making payment.`;
+
+const encodedMessage = encodeURIComponent(message);
+
+window.location.href = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+});
+</script>
+
+</body>
+</html>
